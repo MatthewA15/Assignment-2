@@ -1,0 +1,29 @@
+@charset "UTF-8";
+ /* Page Style */
+body
+{
+background-color: rgba(0, 0, 0, 0.703);
+background-image: linear-gradient(to left, blue, rgb(123,233,231));
+font-family: 'Segoe UI';
+padding:0px;
+margin:0px;
+}
+/* Formatting */
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+footer{
+    margin-top: 300px;
+    text-align: center;
+}
+
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}

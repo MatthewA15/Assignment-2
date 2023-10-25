@@ -1,0 +1,44 @@
+@charset "UTF-8";
+ /* Page Style */
+body
+{
+background-color: rgba(0, 0, 0, 0.703);
+background-image: linear-gradient(to left, blue, rgb(123,233,231));
+font-family: 'Segoe UI';
+padding:0px;
+margin:0px;
+}
+
+div {
+    display: flex;
+    background-image: linear-gradient(to top, blue, rgb(0, 145, 255));
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+footer{
+    margin-top: 300px;
+    text-align: center;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px
+}
+
+li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px
+}

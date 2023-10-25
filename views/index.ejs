@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/Content/app.css' />
+    <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/@fortawesome\fontawesome-free/css/all.min.css' />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">INFR3120</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/"><i class="fa-solid fa-large fa-house"></i> Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/about"><i class="fa-regular fa-large fa-address-card"></i> About</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/services"><i class="fa-solid fa-large fa-user-gear"></i> Services</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/products"><i class="fa-solid fa-large fa-bars"></i></i>Products</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/contact"><i class="fa-solid fa-large fa-phone"></i> Contact Us</a>
+            </li>
+            
+        </div>
+      </div>
+    </nav>
+    <h1><%= heading %></h1>
+    <p>Welcome to <%= title %></p>
+    <% if (title === 'Home') { %>
+      <div id="home">
+        <h1>Welcome!</h1>
+        <p></p>
+  </div>
+<!-- Navigate to Contact-->
+<div id="contact">
+    <h1>Contact Me</h1>
+    <p>This is the Contact Me page. You can provide your contact information here.</p>
+</div>
+<footer>
+    &copy; Copyright by Matthew <br>
+    matthew.allicock09@gmail.com
+</footer>
+    }
+
+
+    <% if (title === 'About me') { %>
+      <div id="about"></div> 
+      <h1>About Me</h1>
+      <video id="video" poster="IMG_0668.mp4" controls width="320" height="320" loop preload="auto" autoplay muted>
+          <source src="IMG_0668.mp4" type="video/mp4">
+      </video>
+      <br>
+      <button onclick="playPause()">Play/Pause</button>
+      <script>
+          var myVideo=document.getElementById("video");
+          function playPause()
+          {if (myVideo.paused) myVideo.play(); else myVideo.pause();}
+      </script>
+  <!--Copyright & Email-->
+  <footer>
+      &copy; Copyright by Matthew <br>
+      matthew.allicock09@gmail.com
+  </footer>
+    }
+    <% if (title === 'Projects') { %>
+      <!--List of Projects-->
+      <h1>Projects</h1>
+      <ul>
+          <li>Calculator</li>
+          <li>LetterCount</li>
+          <li>Payroll</li>
+          <li>SumofDigits</li>
+          <li>Student Grades</li>
+      </ul>
+  </nav>
+<!--Email and Copyright-->
+<footer>
+  &copy; Copyright by Matthew <br>
+  matthew.allicock09@gmail.com
+</footer> 
+    }
+    <% if (title === 'Contact') { %>
+      <p>Questions, Comments and Queries Below!</p><br>
+            <div id="left-coloum">
+                <form 
+                action="mailto:matthew.allicock@ontariotechu.net"
+                enctype="text/plain"
+                method="post"
+                name="form"
+                >
+                <p>
+                    <label id="email">Email :</label><br>
+                    <input type="email" name="email" size="30" placeholder="Enter Email Here" required>
+                </p>
+                <p>
+                    <label id="comments">Comments :</label><br>
+                    <textarea name="comment" cols="60" rows="8"></textarea>
+                </p>
+                <p>
+                    <label id="name">Name :</label><br>
+                    <input type="text" name="name" size="40" placeholder="Enter Name Here" required>
+                </p>
+        
+                <p>
+                    <input type="submit" value="Click here to submit the form">
+                </p>
+            </form>
+            </div>
+            <footer>
+                &copy; Copyright by Matthew <br>
+                matthew.allicock09@gmail.com
+            </footer>
+    }
+  </body>
+</html>
