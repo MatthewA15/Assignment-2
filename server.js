@@ -5,7 +5,7 @@
  */
 
 var app = require('./app');
-var debug = require('debug')('classproject:server');
+var debug = require('debug')('assignment 2:server');
 var http = require('http');
 
 /**
@@ -91,6 +91,11 @@ function onListening() {
 
 var express = require('express');
 var router = express.Router();
+/*Run through port given*/
+const PORT = 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -119,5 +124,6 @@ router.get('/Contact', function(req, res, next) {
   heading: 'Contact Us'
  });
 });
+
 
 module.exports = router;

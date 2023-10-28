@@ -2,9 +2,10 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/Content/app.css' />
+    <link rel='stylesheet' href='/Content/app.css' href='/Content/apps.css' />
     <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.min.css' />
     <link rel='stylesheet' href='/@fortawesome\fontawesome-free/css/all.min.css' />
+    
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -24,42 +25,24 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/services"><i class="fa-solid fa-large fa-user-gear"></i> Services</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/products"><i class="fa-solid fa-large fa-bars"></i></i>Products</a>
+              <a class="nav-link" aria-current="page" href="/projects"><i class="fa-solid fa-large fa-bars"></i></i> Projects<a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="/contact"><i class="fa-solid fa-large fa-phone"></i> Contact Us</a>
             </li>
-            
+          </ul>
         </div>
       </div>
     </nav>
     <h1><%= heading %></h1>
-    <p>Welcome to <%= title %></p>
     <% if (title === 'Home') { %>
       <div id="home">
         <h1>Welcome!</h1>
-        <p></p>
-  </div>
-<!-- Navigate to Contact-->
-<div id="contact">
-    <h1>Contact Me</h1>
-    <p>This is the Contact Me page. You can provide your contact information here.</p>
-</div>
-<footer>
-    &copy; Copyright by Matthew <br>
-    matthew.allicock09@gmail.com
-</footer>
-    }
-
-
-    <% if (title === 'About me') { %>
-      <div id="about"></div> 
-      <h1>About Me</h1>
+      </div>
+    <% } %>
+    <% if (title === 'About Me') { %>
+      <p> About Matthew</p>
       <video id="video" poster="IMG_0668.mp4" controls width="320" height="320" loop preload="auto" autoplay muted>
           <source src="IMG_0668.mp4" type="video/mp4">
       </video>
@@ -70,15 +53,14 @@
           function playPause()
           {if (myVideo.paused) myVideo.play(); else myVideo.pause();}
       </script>
-  <!--Copyright & Email-->
-  <footer>
+        <!--Copyright & Email-->
+      <footer>
       &copy; Copyright by Matthew <br>
       matthew.allicock09@gmail.com
-  </footer>
-    }
+      </footer>
+    <% } %>
     <% if (title === 'Projects') { %>
       <!--List of Projects-->
-      <h1>Projects</h1>
       <ul>
           <li>Calculator</li>
           <li>LetterCount</li>
@@ -86,22 +68,24 @@
           <li>SumofDigits</li>
           <li>Student Grades</li>
       </ul>
-  </nav>
-<!--Email and Copyright-->
-<footer>
-  &copy; Copyright by Matthew <br>
-  matthew.allicock09@gmail.com
-</footer> 
-    }
-    <% if (title === 'Contact') { %>
-      <p>Questions, Comments and Queries Below!</p><br>
-            <div id="left-coloum">
+        <!--Email and Copyright-->
+      <footer>
+        &copy; Copyright by Matthew <br>
+        matthew.allicock09@gmail.com
+      </footer> 
+    <% } %>
+    <% if (title === 'Contact Us') { %>
+      <p>Questions, Comments and Queries Below!</p><br><br>
+      <!--Contact-->
+            <p>This is the Contact Me page. You can provide your contact information here.</p>
+            <div id="left-coloum" style="margin: auto; width: 50%;" class="center-flexbox" class="center-grid">
                 <form 
                 action="mailto:matthew.allicock@ontariotechu.net"
                 enctype="text/plain"
                 method="post"
                 name="form"
                 >
+                <!-- Content in Boxes -->
                 <p>
                     <label id="email">Email :</label><br>
                     <input type="email" name="email" size="30" placeholder="Enter Email Here" required>
@@ -124,6 +108,6 @@
                 &copy; Copyright by Matthew <br>
                 matthew.allicock09@gmail.com
             </footer>
-    }
+      <% } %>
   </body>
 </html>

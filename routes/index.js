@@ -16,14 +16,14 @@ router.get('/about', function(req, res, next) {
 });
 
 /* GET Projects page. */
-router.get('/Projects', function(req, res, next) {
+router.get('/projects', function(req, res, next) {
   res.render('index', { title: 'Projects',
   heading: 'Projects'
  });
 });
 
 /* GET Contact page. */
-router.get('/Contact', function(req, res, next) {
+router.get('/contact', function(req, res, next) {
   res.render('index', { title: 'Contact Us',
   heading: 'Contact Us'
  });
