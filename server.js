@@ -6,8 +6,8 @@
 
 var app = require('./app');
 var debug = require('debug')('assignment 2:server');
-var http = require('http');
 var express = require('express');
+var router = express.Router();
 
 /**
  * Normalize a port into a number, string, or false.
@@ -28,21 +28,18 @@ function normalizePort(val) {
   return false;
 }
 
-/**
- * Get port from environment and store in Express.
- */
 const port = normalizePort(process.env.PORT || '4000');
 app.set('port', port);
 
-/**
- * Create HTTP server.
- */
-var server = http.createServer(app);
+app.listen(port, () => {
+  debug('Listening on port ' + port);
+  console.log(`Server running on port ${port}`);
+});
 
 /**
  * Event listener for HTTP server "error" event.
  */
-function onError(error) {
+app.on('error', (error) => {
   if (error.syscall !== 'listen') {
     throw error;
   }
@@ -56,30 +53,42 @@ function onError(error) {
     case 'EACCES':
       console.error(bind + ' requires elevated privileges');
       process.exit(1);
+      break;
     case 'EADDRINUSE':
       console.error(bind + ' is already in use');
       process.exit(1);
+      break;
     default:
       throw error;
   }
-}
+});
 
-/**
- * Event listener for HTTP server "listening" event.
- */
-function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug('Listening on ' + bind);
-}
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Home Page',
+  heading: 'Home'
+ });
+});
 
-/**
- * Listen on provided port, on all network interfaces.
- */
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+/* GET About page. */
+router.get('/about', function(req, res, next) {
+  res.render('index', { title: 'About Me',
+  heading: 'About'
+ });
+});
 
-console.log(`Server running on port ${port}`);
+/* GET Projects page. */
+router.get('/Projects', function(req, res, next) {
+  res.render('index', { title: 'Projects',
+  heading: 'Projects'
+ });
+});
+
+/* GET Contact page. */
+router.get('/Contact', function(req, res, next) {
+  res.render('index', { title: 'Contact Us',
+  heading: 'Contact Us'
+ });
+});
+
+module.exports = router;
